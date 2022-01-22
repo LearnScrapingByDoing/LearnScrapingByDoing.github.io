@@ -48,6 +48,7 @@
         }
 
         #navbar {
+            z-index: 2;
             background-color: #fff;
             position: fixed;
             width: 100%;
@@ -175,7 +176,6 @@
     </header>
 
     <div id="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
         <nav>
             <a href="#Intro">Introduction<br></a>
             <a href="#Lang">Language Specific Details</a>
@@ -186,13 +186,14 @@
 
     <script>
         function openNav() {
-            document.getElementById("sidenav").style.width = "250px";
+            var sidenav = document.getElementById("sidenav")
+            
+            if (sidenav.style.width == "250px") {
+                sidenav.style.width = "0px";
+            } else {
+                sidenav.style.width = "250px";
+            }
         }
-
-        function closeNav() {
-            document.getElementById("sidenav").style.width = "0px";
-        }
-
     </script>
 
     <main class="home">
@@ -203,7 +204,7 @@
         </header>
 
         <h2 id="Intro">Introduction</h2>
-        <p class="end">As guides are often long stretches of text, they can come off as daunting - and as they are generally not accompanied by practice, they likely do not inspire confidence in their ability to actually implement the guide's content. As such, we have create this site which functions as both a guide to teach you and a tool to give you experience</p>
+        <p class="end">As guides are often long stretches of text, they can come off as daunting - and as they are generally not accompanied by practice, they likely do not inspire confidence within the reader in their ability to actually implement the guide's instructions. As such, we have create this site which functions as both a guide to teach you and a tool to give you practical experience.</p>
 
         <h2 id="Lang">Language Specific Details</h2>
         <p>In this section, we will cover language specific details, these will include:</p>
@@ -212,17 +213,16 @@
             <li>How to use them</li>
         </ul>
 
-        <p>but will not include commonalities, such as how to form css selectors.
-
-        In this guide, we will add sub-sections for the following languages:
+        <p>but will not include commonalities, such as how to form <a href="#Css">css selectors</a>. Rather, those will have their own dedicated sections.</p>
+        <p>In this section, we will add sub-sections for the following languages:
         <ul>
-            <li>Python</li>
-            <li>*Nix shells</li>
+            <li><a href="#Python">Python</a></li>
+            <li><a href="#Nix">*Nix shells</a></li>
         </ul>
 
         <p>but PRs for language additions are welcome.</p>
 
-        <p class="end">The following language-specific sub-sections will show you how to send requests in your language as well as how to parse the results. However, some things which may be mentioned, such as css selectors, xpaths, and regex will <b>NOT</b> be elaborated on here as they will be given their own sections since they are a commanality between languages.</p>
+        <p class="end">The following language-specific sub-sections will show you how to send requests in your language as well as how to parse the results. However, some things which may be mentioned, such as css selectors, xpaths, and regex will <b>NOT</b> be elaborated in here as they will be given their own sections since they are a commanality between languages.</p>
 
         <h3 id="Python">Python</h3>
         <p>For scraping with python, we will be using the following libraries:</p>
