@@ -1,17 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Scraping By Doing</title>
+    <meta charset="utf-8">
+    <style>
+        main.dark {
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+        }
+
+        main.light {
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0);
+        }
+
+        #sidenav {
+            /* border-right-style: solid;
+            border-right-color: #eaecef; */
+            height: 100%;
+            width: 0%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #fafbfe;
+            overflow-x: hidden;
+            transition: 0.2s;
+            padding-top: 60px;
+        }
+
+        #sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        #sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        #sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #sidenav nav {
+            margin-top: 50px;
+        }
+
+        .sidebar-button {
+            display: flex;
+        }
+
+        #navbar {
+            z-index: 2;
+            background-color: #fff;
+            position: fixed;
+            width: 100%;
+            /* border-bottom-style: solid;
+            border-bottom-color: #eaecef; */
+            padding-bottom: 10px;
+            padding-top: 0.6rem;
+            top: 0px;
+        }
+
+        #navbar .logo {
+            height: 1.5rem;
+            margin-right: 2rem;
+            margin-left: 1.3rem;
+            min-width: 2rem;
+            vertical-align: top;
+        }
+
+        #navbar svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        #navbar .sitename {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        nav .indent {
+            margin-left: 30px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+            padding-top: 102px;
+        }
+
+        @media screen and (max-height: 450px) {
+            #sidenav { padding-top: 15px; }
+            #sidenav a { font-size: 18px; }
+        }
+
+        .home .banner img {
+            display: block;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+            max-height: 5rem;
+            max-width: 100%;
+        }
+
+        .banner {
+            padding-bottom: 0px;
+            padding-top: 25px;
+        }
+
+        .home .banner h1 {
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 19.2px;
+            margin-top: 19.2px;
+            /* width: 95%; */
+            text-align: center; 
+        }
+
+        .home .banner p {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 35rem;
+            text-align: center;
+        }
+
+        .home {
+            overflow: auto;
+            display: block;
+            width: 98%;
+            margin: auto;
+        }
+
+        .home h2, .home h3 {
+            text-align: center;
+        }
+
+        .home p {
+            display: block;
+            line-height: 1.3;
+        }
+
+        .home .end {
+            /* border-bottom-style: solid;
+            border-bottom-color: #eaecef; */
+            padding-bottom: 20px;
+        }
+        code {
+            font-family: Consolas, "courier new";
+            background-color: #f1f1f1;
+            border-radius: 7px;
+            padding-right: 5px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Learn Scraping By Doing</h1>
-    <p>How we roll here is how we decide, have suggestions, leave an issue on github or create a pull request</p>
-    <ol>
-        <li><a href="/scraping/index.html">The Basics</a></li>
-    </ol>
+    <header id="navbar">
+        <div class="sidebar-button" onClick="openNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
+                <path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" />    
+            </svg>
+            <img src="./logo.svg" class="logo" />
+            <span class="sitename">Learn By Scraping</span>
+        </div>
+    </header>
+
+    <div id="sidenav">
+        <nav>
+            <a href="#Intro">Introduction<br></a>
+            <a href="#Lang">Language Specific Details</a>
+            <a href="#Python" class="indent">• Python</a>
+            <a href="#Nix" class="indent">• *Nix Shells</a>
+        </nav>
+    </div>
+
+    <script>
+        function openNav() {
+            var sidenav = document.getElementById("sidenav")
+            let mainContent = document.getElementById("mainContent")
+            
+            if (sidenav.style.width == "250px") {
+                mainContent.classList.remove("dark");
+                mainContent.classList.add("light");
+                sidenav.style.width = "0px";
+            } else {
+                sidenav.style.width = "250px";
+                mainContent.classList.remove("light");
+                mainContent.classList.add("dark");
+            }
+        }
+    </script>
+
+    <main id="mainContent" class="home">
+        <header class="banner">
+            <img src="./logo.svg" alt="Logo" />
+            <h1 id="main-title">Learn By Scraping</h1>
+            <p class="end">A guide and a tool to learn to scraping by scraping</p>
+        </header>
+
+        <h2 id="Intro">Introduction</h2>
+        <p class="end">As guides are often long stretches of text, they can come off as daunting - and as they are generally not accompanied by practice, they likely do not inspire confidence within the reader in their ability to actually implement the guide's instructions. As such, we have created this site which functions as both a guide to teach you and a tool to give you practical experience.</p>
+
+        <h2 id="Lang">Language Specific Details</h2>
+        <p>In this section, we will cover language specific details, these will include:</p>
+        <ul>
+            <li>Libraries to use</li>
+            <li>How to use them</li>
+        </ul>
+
+        <p>but will not include commonalities, such as how to form <a href="#Css">css selectors</a>. Rather, those will have their own dedicated sections.</p>
+        <p>In this section, we will add sub-sections for the following languages:
+        <ul>
+            <li><a href="#Python">Python</a></li>
+            <li><a href="#Nix">*Nix shells</a></li>
+        </ul>
+
+        <p>but PRs for language additions are welcome.</p>
+
+        <p class="end">The following language-specific sub-sections will show you how to send requests in your language as well as how to parse the results. However, some things which may be mentioned, such as css selectors, xpaths, and regex will <b>NOT</b> be elaborated in here as they will be given their own sections since they are a commanality between languages.</p>
+
+        <h3 id="Python">Python</h3>
+        <p>For scraping with python, we will be using the following libraries:</p>
+        <ul>
+            <li>requests</li>
+            <li>beautifulsoup</li>
+        </ul>
+
+        <p>These can be downloaded using the following commands:</p>
+        <ul>
+            <li><code>python -m pip install requests</code></li>
+            <br> 
+            <li><code>python -m pip install beautifulsoup4</code></li>
+        </ul>
+    </main>
 </body>
 </html>
