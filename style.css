@@ -21,6 +21,8 @@ main.dark .end {
     left: 0;
     background-color: #fafbfe;
     overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
     transition: 0.2s;
     padding-top: 60px;
 }
