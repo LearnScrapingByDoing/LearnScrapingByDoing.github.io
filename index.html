@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="./prism.js"></script>
+    <link rel="stylesheet" href="./prism.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    
     <script src="./script.js"></script>
 </head>
-<body>
+<body class="line-numbers">
     <header id="navbar">
         <div class="sidebar-button" onClick="openNav()">
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
@@ -57,23 +60,37 @@
         <h3 id="Python">Python</h3>
         <p>For scraping with python, we will be using the following libraries:</p>
         <ul>
-            <li>httpx</li>
-            <li>beautifulsoup</li>
+            <li>
+                <strong>
+                    httpx
+                </strong>
+            </li>
+            <dd>
+                Use: To create network requests to desired URI's
+            </dd>
+            <li>
+                <strong>
+                    beautifulsoup
+                </strong>
+            </li>
+            <dd>
+                Use: To Parse the request body into a pythonic object
+            </dd>
         </ul>
 
         <p>These can be downloaded using the following commands:</p>
-        <ul class="special">
+        <ul>
             <li><code>python -m pip install httpx</code></li>
             <br> 
             <li><code>python -m pip install beautifulsoup4</code></li>
         </ul>
 
         <p>To import httpx and beautifulsoup - you must import them as follows:</p>
-        <ul>
-            <li><code>import httpx</code></li>
-            <br>
-            <li><code>from bs4 import BeautifulSoup</code></li>
-        </ul>
+        <pre>
+<code class="lang-py">import httpx
+from bs4 import BeautifulSoup
+</code>
+        </pre>
     </main>
 </body>
 </html>
