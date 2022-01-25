@@ -1,7 +1,8 @@
 function openNav() {
-    var sidenav = document.getElementById("sidenav")
+    var sidenav = document.getElementById("sidenav").style
     document.getElementById("mainContent").classList.toggle("dark");
-    sidenav.style.width == "250px" 
-        ? sidenav.style.width = "0px" 
-        : sidenav.style.width = "250px";
+    sidenav.width = 
+        sidenav.width == "250px" 
+            ? "0px" 
+            : "250px"
 }
