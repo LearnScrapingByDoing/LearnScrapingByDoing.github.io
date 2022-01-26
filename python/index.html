@@ -94,23 +94,36 @@ with httpx.Client() as client:
         
         <p>Running this file will print out the json that we just scraped!</p>
         <p>It should look something like this:</p>
-        <pre><code class="lang-json">[
+        <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;A very scrapable page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;pre&gt;
+[
     {
-        "text": "id, libero. Donec consectetuer mauris id sapien. Cras dolor dolor,"
+            &quot;text&quot;: &quot;id, libero. Donec consectetuer mauris id sapien. Cras dolor dolor,&quot;
     },
     {
-        "text": "eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus"
+            &quot;text&quot;: &quot;eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus&quot;
     },
     {
-        "text": "felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum."
+            &quot;text&quot;: &quot;felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum.&quot;
     },
     {
-        "text": "sit amet diam eu dolor egestas rhoncus. Proin nisl sem,"
+            &quot;text&quot;: &quot;sit amet diam eu dolor egestas rhoncus. Proin nisl sem,&quot;
     },
     {
-        "text": "eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed"
+            &quot;text&quot;: &quot;eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed&quot;
     }
-]</code></pre>
+]
+&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
     </main>
 </body>
 </html>
