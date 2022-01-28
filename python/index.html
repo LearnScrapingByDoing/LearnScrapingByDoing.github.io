@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+l!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/assets/style.css" type="text/css">
@@ -57,9 +57,9 @@
 
         <p>These can be downloaded using the following commands:</p>
         <ul>
-            <li><code>python -m pip install httpx</code></li>
+            <li><code class="lang-py">python -m pip install httpx</code></li>
             <br> 
-            <li><code>python -m pip install beautifulsoup4</code></li>
+            <li><code class="lang-py">python -m pip install beautifulsoup4</code></li>
         </ul>
 
         <p>This is a pre-setup replit that is able to be forked and edited as a simple and easy way to get started without having to install any special software</p>
@@ -79,7 +79,7 @@ from bs4 import BeautifulSoup</code></pre>
 
         <p>To set up the client type the following code:</p>
 
-        <pre><code class="lang-py">url = "http://learnscrapingbydoing.github.io/scrapable/1.html"
+        <pre><code class="lang-py">url = "https://learnscrapingbydoing.github.io/scrapable/1.html"
 with httpx.Client() as client:
     URIData = client.get(url)</code></pre>
         
@@ -96,7 +96,7 @@ with httpx.Client() as client:
 
         <pre><code class="lang-py">import httpx
 from bs4 import BeautifulSoup
-url = "http://learnscrapingbydoing.github.io/scrapable/1.html"
+url = "https://learnscrapingbydoing.github.io/scrapable/1.html"
 with httpx.Client() as client:
     URIData = client.get(url)
     print(URIData.text)</code></pre>
