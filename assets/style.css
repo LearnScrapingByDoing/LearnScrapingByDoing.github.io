@@ -178,6 +178,15 @@ nav .indent {
     padding-bottom: 20px;
 }
 
+/* code:not(main.dark code) {
+    font-family: Consolas, "courier new";
+    background-color: #f1f1f1;
+    border-radius: 7px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+} */
+
 .overflow {
     overflow: auto !important;
     padding-left: 0%;
@@ -203,4 +212,46 @@ body.dark #navbar, body.dark #sidenav {
 
 body.dark img, body.dark svg {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(106%) contrast(103%);
+}
+.replit {
+    position: fixed;
+    z-index: 1;
+    top: 4rem;
+    right: 0rem;
+    /* overflow: hidden; */
+}
+
+.replit-frame-collapsed {
+    width: 0px;
+    height: 0px;
+}
+@media screen and (orientation:portrait) {
+    .replit-frame-expanded {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+.replit-frame-expanded {
+    width: 30rem;
+    height: 30rem;
+}
+
+.replit-collapse {
+    position: absolute;
+    left: -2rem;
+    top: 0rem;
+    padding: 4px;
+    background: rgba(0,0,0,.2);
+    transform: rotate(-90deg);
+    transition-duration: 250ms;
+}
+
+.replit-expand {
+    position: absolute;
+    left: -2rem;
+    top: 0rem;
+    padding: 4px;
+    background: rgba(0,0,0,.2);
+    transform: rotate(90deg);
+    transition-duration: 250ms;
 }

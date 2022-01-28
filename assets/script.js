@@ -38,3 +38,19 @@ function setDark() {
         document.body.classList.add('dark');
     }
 }
+function replitToggle() {
+    let frame =  document.getElementById("replitFrame");
+    let button = document.getElementById("collapse-button");
+    if (frame.classList.contains("replit-frame-expanded")) {
+        frame.classList.remove("replit-frame-expanded");
+        frame.classList.add("replit-frame-collapsed");
+        button.classList.add("replit-expand");
+        button.classList.remove("replit-collapse");
+
+    } else {
+        frame.classList.add("replit-frame-expanded");
+        frame.classList.remove("replit-frame-collapsed");
+        button.classList.remove("replit-expand");
+        button.classList.add("replit-collapse");
+    }
+}
