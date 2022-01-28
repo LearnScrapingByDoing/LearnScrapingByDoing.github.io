@@ -225,33 +225,79 @@ body.dark img, body.dark svg {
     width: 0px;
     height: 0px;
 }
+
 @media screen and (orientation:portrait) {
-    .replit-frame-expanded {
-        width: 10rem;
-        height: 10rem;
+    .replit {
+        width: 0rem;
+        height: 0rem;
+    }
+    div.resize {
+        position: absolute;
+        left: -0.5rem;
+        top: 2rem;
+        height: 28rem;
+        width: 0.5rem;
+        background: #600;
+        display: none;
+    }
+    .replit-collapse {
+        position: absolute;
+        left: -2rem;
+        top: 0rem;
+        padding: 4px;
+        background: rgba(0,0,0,.2);
+        transform: rotate(-90deg);
+        transition-duration: 250ms;
+        display: none;
+    }
+    
+    .replit-expand {
+        position: absolute;
+        left: -2rem;
+        top: 0rem;
+        padding: 4px;
+        background: rgba(0,0,0,.2);
+        transform: rotate(90deg);
+        transition-duration: 250ms;
+        display: none;
     }
 }
-.replit-frame-expanded {
-    width: 30rem;
-    height: 30rem;
-}
 
-.replit-collapse {
-    position: absolute;
-    left: -2rem;
-    top: 0rem;
-    padding: 4px;
-    background: rgba(0,0,0,.2);
-    transform: rotate(-90deg);
-    transition-duration: 250ms;
-}
-
-.replit-expand {
-    position: absolute;
-    left: -2rem;
-    top: 0rem;
-    padding: 4px;
-    background: rgba(0,0,0,.2);
-    transform: rotate(90deg);
-    transition-duration: 250ms;
+@media screen and (orientation:landscape) {
+    .replit-frame-expanded {
+        /* resize: horizontal;
+        overflow: auto; */
+        width: 25rem;
+        height: 30rem;
+    }
+    div.resize {
+        position: absolute;
+        left: -0.5rem;
+        top: 2rem;
+        height: 28rem;
+        width: 0.5rem;
+        background: #600;
+        display: inherit;
+    }
+    .replit-collapse {
+        position: absolute;
+        left: -2rem;
+        top: 0rem;
+        padding: 4px;
+        background: rgba(0,0,0,.2);
+        transform: rotate(-90deg);
+        transition-duration: 250ms;
+        display: inherit;
+    }
+    
+    .replit-expand {
+        position: absolute;
+        left: -2rem;
+        top: 0rem;
+        padding: 4px;
+        background: rgba(0,0,0,.2);
+        transform: rotate(90deg);
+        transition-duration: 250ms;
+        display: inherit;
+    }
 }
