@@ -48,10 +48,19 @@
                     </tr>
                 </table>
                 <div class="input_and_continue row" style="margin: 0;">
-                    <form action="/lesson/letters_and_digits" method="get">
-                        <input class="exercise_input_field col-xs-12 col-sm-9 col-md-9" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Type your selector" />
-                        <input class="continue disabled col-xs-12 col-sm-3 col-md-3" disabled type="submit" value="Continue ›" />
+                    <form onsubmit="cssLessonOne(event)">
+                        <input class="exercise_input_field col-xs-12 col-sm-9 col-md-9" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Type your selector" id="cssSel1"/>
+                        <input class="continue col-xs-12 col-sm-3 col-md-3" type="submit" value="Continue ›" />
                     </form>
+                    <div>
+                        <img src="/assets/task_complete.png" id="cssLessonOneImgComplete" class="taskImg" hidden alt="">
+                        <img src="/assets/task_default.png" id="cssLessonOneImgDefault" class="taskImg" alt="">
+                        <img src="/assets/task_incomplete.png" id="cssLessonOneImgIncomplete" class="taskImg" hidden alt="">
+                        <form action="/css/lesson2.html" hidden id="cssLessonOneContinueForm">
+                            <button type="submit">Next Lesson</button>
+                        </form>
+                    </div>
+
                 </div>
         </main>
         <p id="toggle">Dark Mode: <a href="#toggle" onClick="toggleTheme()">Toggle</a></p>

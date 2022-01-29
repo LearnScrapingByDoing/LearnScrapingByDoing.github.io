@@ -116,3 +116,24 @@ function addHeader() {
         </nav>
     </div>`
 }
+
+function cssLessonOne(e) {
+    e.preventDefault(); 
+    try {
+        let input = document.getElementById("cssSel1").value;
+        console.log(input);
+        if (input == "a") {
+            document.getElementById("cssLessonOneImgComplete").hidden = false;
+            document.getElementById("cssLessonOneImgIncomplete").hidden = true;
+            document.getElementById("cssLessonOneImgDefault").hidden = true;
+            document.getElementById("cssLessonOneContinueForm").hidden = false;
+        } else {
+            document.getElementById("cssLessonOneImgComplete").hidden = true;
+            document.getElementById("cssLessonOneImgIncomplete").hidden = false;
+            document.getElementById("cssLessonOneImgDefault").hidden = true;
+        }
+    } catch (e) {
+        throw new Error(e.message);
+    }
+    return false;
+}

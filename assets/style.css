@@ -381,6 +381,7 @@ input.continue.disabled {
     color: rgb(249, 249, 249);
     font-size: 1.125em;
     height: 2.125em;
+    width: fit-content;
     text-align: center;
     border-bottom-width: 0px;
     border-left-width: 0px;
@@ -426,4 +427,10 @@ body.dark input.exercise_input_field {
 
 main.shadow .exercise {
     background-color: rgba(0, 0, 0, 0);
+}
+
+img.taskImg {
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1;
 }
