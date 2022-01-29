@@ -90,8 +90,8 @@ function makeResizableDiv(div) {
 }
 
 window.onload = function() {
-    makeResizableDiv('.resizable');
     addHeader();
+    makeResizableDiv('.resizable');
 }
 
 function addHeader() {
