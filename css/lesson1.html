@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/assets/style.css" type="text/css">
+        <script src="/assets/prism.js"></script>
+        <script src="/css/lessons.js"></script>
+        <link rel="stylesheet" href="/assets/prism.css" id="prism" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Learn By Scraping" property="og:title">
+        <meta content="A guide and a tool to learn scraping in theory whilst also applying it in practice." property="og:description">
+        <meta charset="utf-8">
+        <script src="/assets/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Selectors</title>
+    </head>
+    <body class="line-numbers">
+        <br>
+        <main id="mainContent" class="home">
+            <h3 id="title">Lesson 1: An introduction to css</h3>
+            <p><b>Css selectors</b> are an extremely useful tool when scraping as they provide an easy and convenient way for you to navigate a html document without having to perform text extraction in the usual way (such as by regex for example). The following lessons will explore the practical usage of css selectors and will push you further along in yout scraping journey.
+
+            The first lesson that you will learn, is that every element can be matched by its name.</p>
+            <p>Go ahead and try writing a selector that matches all three rows, <b>it is as simple as using the name of the nodes:</b></p>
+            <div class="exercise">
+                <div class="title">
+                    Exercise 1: Matching elements
+                </div>
+                <table class="tasks_table">
+                    <tr class="problem_header">
+                        <td class="task">Task</td>
+                        <td class="text">Text</td>
+                        <td style="width: 2.3125em"> </td>
+                    </tr>
+                    <tr class="problem">
+                        <td class="task">match</td>
+                        <td class="text">&lt;a href="link"&gt;&lt;/a&gt;</td>
+                        <td class="result"><img src="/assets/task_default.png" alt="To be completed" /></td>
+                    </tr>
+                    <tr class="problem">
+                        <td class="task">match</td>
+                        <td class="text">&lt;a id="id" /&gt;</td>
+                        <td class="result"><img src="/assets/task_default.png" alt="To be completed" /></td>
+                    </tr>
+                    <tr class="problem">
+                        <td class="task">match</td>
+                        <td class="text">&lt;a href="link"&gt;Text&lt;/a&gt;</td>
+                        <td class="result"><img src="/assets/task_default.png" alt="To be completed" /></td>
+                    </tr>
+                </table>
+                <div class="input_and_continue row" style="margin: 0;">
+                    <form action="/lesson/letters_and_digits" method="get">
+                        <input class="exercise_input_field col-xs-12 col-sm-9 col-md-9" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Type your selector" />
+                        <input class="continue disabled col-xs-12 col-sm-3 col-md-3" disabled type="submit" value="Continue ›" />
+                    </form>
+                </div>
+        </main>
+        <p id="toggle">Dark Mode: <a href="#toggle" onClick="toggleTheme()">Toggle</a></p>
+    </body>
+</html>

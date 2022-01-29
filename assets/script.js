@@ -118,6 +118,7 @@ function addHeader() {
             <a href="/index.html#Lang">Language Specific Details</a>
             <a href="/python/index.html" class="indent">• Python</a>
             <a href="/sh/index.html" class="indent">• *Nix Shells</a>
+            <a href="/css/lesson1.html">Css Selectors</a>
         </nav>
     </div>`
 }
