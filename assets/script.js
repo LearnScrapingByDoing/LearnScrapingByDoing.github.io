@@ -112,6 +112,28 @@ function addHeader() {
             <a href="/index.html#Lang">Language Specific Details</a>
             <a href="/python/index.html" class="indent">• Python</a>
             <a href="/sh/index.html" class="indent">• *Nix Shells</a>
+            <a href="/css/lesson1.html">Css Selectors</a>
         </nav>
     </div>`
+}
+
+function cssLessonOne(e) {
+    e.preventDefault(); 
+    try {
+        let input = document.getElementById("cssSel1").value;
+        if (input == "a") {
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_complete.png"
+            );
+            document.getElementById("cssLessonOneContinueForm").hidden = false;
+        } else {
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_incomplete.png"
+            );
+            document.getElementById("cssLessonOneContinueForm").hidden = true;
+        }
+    } catch (e) {
+        throw new Error(e.message);
+    }
+    return false;
 }
