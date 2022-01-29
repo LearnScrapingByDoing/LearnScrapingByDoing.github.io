@@ -121,16 +121,16 @@ function cssLessonOne(e) {
     e.preventDefault(); 
     try {
         let input = document.getElementById("cssSel1").value;
-        console.log(input);
         if (input == "a") {
-            document.getElementById("cssLessonOneImgComplete").hidden = false;
-            document.getElementById("cssLessonOneImgIncomplete").hidden = true;
-            document.getElementById("cssLessonOneImgDefault").hidden = true;
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_complete.png"
+            );
             document.getElementById("cssLessonOneContinueForm").hidden = false;
         } else {
-            document.getElementById("cssLessonOneImgComplete").hidden = true;
-            document.getElementById("cssLessonOneImgIncomplete").hidden = false;
-            document.getElementById("cssLessonOneImgDefault").hidden = true;
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_incomplete.png"
+            );
+            document.getElementById("cssLessonOneContinueForm").hidden = true;
         }
     } catch (e) {
         throw new Error(e.message);

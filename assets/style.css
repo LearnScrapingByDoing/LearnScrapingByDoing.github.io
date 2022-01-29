@@ -217,7 +217,7 @@ body.dark #navbar, body.dark #sidenav {
     background-color: #121212;
 }
 
-body.dark img, body.dark svg {
+body.dark img:not(td.result img), body.dark svg {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(106%) contrast(103%);
 }
 .replit {
