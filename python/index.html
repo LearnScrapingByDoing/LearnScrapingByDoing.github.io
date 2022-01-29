@@ -14,24 +14,6 @@
     <title>Python Basics</title>
 </head>
 <body class="line-numbers">
-    <header id="navbar">
-        <div class="sidebar-button" onClick="openNav()">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon">
-                <path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" />    
-            </svg>
-            <img src="/assets/logo.svg" class="logo" />
-            <span class="sitename">Learn By Scraping</span>
-        </div>
-    </header>
-
-    <div id="sidenav">
-        <nav>
-            <a href="/index.html#Intro">Introduction<br></a>
-            <a href="/index.html#Lang">Language Specific Details</a>
-            <a href="/python/index.html" class="indent">• Python</a>
-            <a href="/sh/index.html" class="indent">• *Nix Shells</a>
-        </nav>
-    </div>
     <br>
     <main id="mainContent" class="home">
         <h3 id="Python">Python</h3>
@@ -57,9 +39,9 @@
 
         <p>These can be downloaded using the following commands:</p>
         <ul>
-            <li><code>python -m pip install httpx</code></li>
+            <li><code class="lang-py">python -m pip install httpx</code></li>
             <br> 
-            <li><code>python -m pip install beautifulsoup4</code></li>
+            <li><code class="lang-py">python -m pip install beautifulsoup4</code></li>
         </ul>
 
         <p>This is a pre-setup replit that is able to be forked and edited as a simple and easy way to get started without having to install any special software</p>
@@ -79,7 +61,7 @@ from bs4 import BeautifulSoup</code></pre>
 
         <p>To set up the client type the following code:</p>
 
-        <pre><code class="lang-py">url = "http://learnscrapingbydoing.github.io/scrapable/1.html"
+        <pre><code class="lang-py">url = "https://learnscrapingbydoing.github.io/scrapable/1.html"
 with httpx.Client() as client:
     URIData = client.get(url)</code></pre>
         
@@ -96,7 +78,7 @@ with httpx.Client() as client:
 
         <pre><code class="lang-py">import httpx
 from bs4 import BeautifulSoup
-url = "http://learnscrapingbydoing.github.io/scrapable/1.html"
+url = "https://learnscrapingbydoing.github.io/scrapable/1.html"
 with httpx.Client() as client:
     URIData = client.get(url)
     print(URIData.text)</code></pre>
