@@ -86,7 +86,26 @@ function makeResizableDiv(div) {
     function stopResize() {
         window.removeEventListener('mousemove', resize)
     }
-    
+}
+
+function cssLessonOne() {
+    try {
+        let input = document.getElementById("cssSel1").value;
+        if (input == "a") {
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_complete.png"
+            );
+            document.querySelector(".continue").classList.add("green");
+        } else {
+            document.querySelectorAll("td.result img").forEach( img =>
+                img.src = "/assets/task_incomplete.png"
+            );
+            document.querySelector(".continue").classList.remove("green");
+        }
+    } catch (e) {
+        throw new Error(e.message);
+    }
+    return false;
 }
 
 window.onload = function() {
@@ -115,25 +134,4 @@ function addHeader() {
             <a href="/css/lesson1.html">Css Selectors</a>
         </nav>
     </div>`
-}
-
-function cssLessonOne(e) {
-    e.preventDefault(); 
-    try {
-        let input = document.getElementById("cssSel1").value;
-        if (input == "a") {
-            document.querySelectorAll("td.result img").forEach( img =>
-                img.src = "/assets/task_complete.png"
-            );
-            document.getElementById("cssLessonOneContinueForm").hidden = false;
-        } else {
-            document.querySelectorAll("td.result img").forEach( img =>
-                img.src = "/assets/task_incomplete.png"
-            );
-            document.getElementById("cssLessonOneContinueForm").hidden = true;
-        }
-    } catch (e) {
-        throw new Error(e.message);
-    }
-    return false;
 }

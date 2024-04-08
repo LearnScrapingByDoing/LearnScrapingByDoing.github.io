@@ -48,16 +48,10 @@
                     </tr>
                 </table>
                 <div class="input_and_continue row" style="margin: 0;">
-                    <form onsubmit="cssLessonOne(event)">
-                        <input class="exercise_input_field col-xs-12 col-sm-9 col-md-9" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Type your selector" id="cssSel1"/>
+                    <form class="cssmatch">
+                        <input class="exercise_input_field col-xs-12 col-sm-9 col-md-9" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Type your selector" id="cssSel1" onchange="cssLessonOne();" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
                         <input class="continue col-xs-12 col-sm-3 col-md-3" type="submit" value="Continue ›" />
                     </form>
-                    <div>
-                        <form action="/css/lesson2.html" hidden id="cssLessonOneContinueForm">
-                            <button type="submit">Next Lesson</button>
-                        </form>
-                    </div>
-
                 </div>
         </main>
         <p id="toggle">Dark Mode: <a href="#toggle" onClick="toggleTheme()">Toggle</a></p>

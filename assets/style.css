@@ -366,6 +366,8 @@ td.text {
 }
 
 input.exercise_input_field {
+    outline: none;
+    box-sizing: border-box;
     border-bottom-width: 0px;
     border-left-width: 0px;
     border-right-width: 0px;
@@ -373,7 +375,9 @@ input.exercise_input_field {
     font-family: monospace;
     font-size: 1.125em;
     height: 2.125em;
-    border-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    /*border-radius: 6px;*/
 }
 
 input.continue.disabled {
@@ -433,4 +437,31 @@ img.taskImg {
     width: 2rem;
     height: 2rem;
     aspect-ratio: 1;
+}
+
+body input.continue {
+    outline: none;
+    border: 0; 
+    width: 100%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 1.125em;
+    height: 1.5em;
+    background-color: rgb(201, 201, 201);
+    color: rgb(249, 249, 249);
+    /*border-radius: 6px;*/
+}
+
+body.dark input.continue {
+    background-color: rgb(6, 6, 6);
+    color: rgb(200, 200, 200);
+}
+
+body form.cssmatch {
+    display: flex;
+    flex-direction: column;
+}
+
+body input.continue.green {
+    background-color: green;
 }
