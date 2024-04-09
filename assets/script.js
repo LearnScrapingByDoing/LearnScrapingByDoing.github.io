@@ -90,16 +90,41 @@ function makeResizableDiv(div) {
 
 function cssLessonOne() {
     try {
+        const lesson = document.getElementById("lesson");
+        const images = document.querySelectorAll("td.result > img");
         let input = document.getElementById("cssSel1").value;
-        if (input == "a") {
-            document.querySelectorAll("td.result img").forEach( img =>
-                img.src = "/assets/task_complete.png"
-            );
-            document.querySelector(".continue").classList.add("green");
-        } else {
-            document.querySelectorAll("td.result img").forEach( img =>
+        let all = true;
+        if (!input) {
+            images.forEach( img =>
                 img.src = "/assets/task_incomplete.png"
             );
+            document.querySelector(".continue").classList.remove("green");
+        }
+        let matching = lesson.querySelectorAll(input);
+        let counter = 0;
+
+        for (const node of lesson.querySelectorAll("*")) {
+            let found = false;
+            for (const element of matching) {
+                if (element === node) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                images[counter].src = "/assets/task_complete.png"
+            } else {
+                images[counter].src = "/assets/task_incomplete.png"
+                all = false;
+            }
+
+            counter += 1;
+        }
+
+        if (all) {
+            document.querySelector(".continue").classList.add("green");
+        } else {
             document.querySelector(".continue").classList.remove("green");
         }
     } catch (e) {
