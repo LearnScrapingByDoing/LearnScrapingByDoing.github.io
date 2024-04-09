@@ -4,8 +4,8 @@ main.shadow {
     box-shadow: 0 0 0 1000px rgba(0,0,0,.4), inset 0 0 0 1000px rgba(0,0,0,.4) !important;
 }
 
-main.shadow .end {
-    border-bottom-style: none;
+main.shadow .end, main.shadow .problem_header td {
+    border-bottom-style: none !important;
 }
 
 main.shadow pre {
@@ -217,7 +217,7 @@ body.dark #navbar, body.dark #sidenav {
     background-color: #121212;
 }
 
-body.dark img, body.dark svg {
+body.dark img:not(td.result img), body.dark svg {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(232deg) brightness(106%) contrast(103%);
 }
 .replit {
@@ -307,4 +307,161 @@ body.dark img, body.dark svg {
         transition-duration: 250ms;
         display: inherit;
     }
+}
+
+.exercise {
+    background-color: rgb(240, 237, 229);
+    border-radius: 6px;
+    font-size: 1.25em;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.75em;
+    overflow-x: auto;
+    padding-bottom: 1em;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 1em;
+}
+
+.exercise .title {
+    color: rgb(117, 117, 117);
+    font-size: 0.9em;
+    padding-bottom: 0.5em;
+    text-transform: capitalize;
+}
+
+.exercise .tasks_table .problem_header td {
+    border-bottom-color: rgb(220, 220, 220);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-spacing: 0;
+    color: rgb(68, 68, 68);
+    font-family: Ruda, "Segoe UI", Calibri, "Trebuchet MS", Helvetica, Verdana, sans-serif;
+    font-size: 0.9em;
+    font-stretch: normal;
+    font-style: normal;
+    padding-left: 0px;
+}
+
+table.tasks_table {
+    border-collapse: collapse;
+}
+
+td.task {
+    font-size: 0.9em;
+    padding-right: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    width: 1em;
+}
+
+td.text {
+    color: black;
+    padding-right: 0.5em;
+    vertical-align: top;
+    white-space: pre;
+    font-size: 0.8em;
+}
+
+input.exercise_input_field {
+    outline: none;
+    box-sizing: border-box;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    font-family: monospace;
+    font-size: 1.125em;
+    height: 2.125em;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    /*border-radius: 6px;*/
+}
+
+input.continue.disabled {
+    background-color: rgb(201, 201, 201);
+    color: rgb(249, 249, 249);
+    font-size: 1.125em;
+    height: 2.125em;
+    width: fit-content;
+    text-align: center;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-radius: 6px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    transition-delay: 0s;
+    transition-duration: 225ms;
+    transition-property: background-color;
+    transition-timing-function: ease;
+}
+
+@media only screen and (max-width: 600px) {
+    .col-xs-12 {
+        width: 100%;
+    }
+}
+
+body.dark .exercise {
+    background-color: rgb(30, 30, 30);
+}
+
+body.dark td.text {
+    color: white;
+}
+
+body.dark div.title, body.dark .problem_header td {
+    color: rgb(200, 200, 200) !important;
+}
+
+body.dark input.continue.disabled {
+    background-color: #444;
+}
+
+body.dark input.exercise_input_field {
+    background-color: #111;
+    color: white;
+}
+
+main.shadow .exercise {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+img.taskImg {
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1;
+}
+
+body input.continue {
+    outline: none;
+    border: 0; 
+    width: 100%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 1.125em;
+    height: 1.5em;
+    background-color: rgb(201, 201, 201);
+    color: rgb(249, 249, 249);
+    /*border-radius: 6px;*/
+}
+
+body.dark input.continue {
+    background-color: rgb(6, 6, 6);
+    color: rgb(200, 200, 200);
+}
+
+body form.cssmatch {
+    display: flex;
+    flex-direction: column;
+}
+
+body input.continue.green {
+    background-color: green;
 }

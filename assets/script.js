@@ -86,7 +86,51 @@ function makeResizableDiv(div) {
     function stopResize() {
         window.removeEventListener('mousemove', resize)
     }
-    
+}
+
+function cssLessonOne() {
+    try {
+        const lesson = document.getElementById("lesson");
+        const images = document.querySelectorAll("td.result > img");
+        let input = document.getElementById("cssSel1").value;
+        let all = true;
+        if (!input) {
+            images.forEach( img =>
+                img.src = "/assets/task_incomplete.png"
+            );
+            document.querySelector(".continue").classList.remove("green");
+        }
+        let matching = lesson.querySelectorAll(input);
+        let counter = 0;
+
+        for (const node of lesson.querySelectorAll("*")) {
+            let found = false;
+            for (const element of matching) {
+                if (element === node) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                images[counter].src = "/assets/task_complete.png"
+            } else {
+                images[counter].src = "/assets/task_incomplete.png"
+                all = false;
+            }
+
+            counter += 1;
+        }
+
+        if (all) {
+            document.querySelector(".continue").classList.add("green");
+        } else {
+            document.querySelector(".continue").classList.remove("green");
+        }
+    } catch (e) {
+        throw new Error(e.message);
+    }
+    return false;
 }
 
 window.onload = function() {
@@ -112,6 +156,7 @@ function addHeader() {
             <a href="/index.html#Lang">Language Specific Details</a>
             <a href="/python/index.html" class="indent">• Python</a>
             <a href="/sh/index.html" class="indent">• *Nix Shells</a>
+            <a href="/css/lesson1.html">Css Selectors</a>
         </nav>
     </div>`
 }
