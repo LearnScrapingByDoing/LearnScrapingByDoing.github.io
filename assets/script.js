@@ -7,6 +7,14 @@ function openNav() {
             : "250px"
 }
 
+function toggleTheme(checked) {
+    if (checked) {
+        document.body.classList.add("dark");
+    } else {
+        document.body.classList.remove("dark");
+    }
+}
+
 function toggleTheme() {
     document.body.classList.toggle("dark");
 
@@ -23,6 +31,11 @@ function toggleTheme() {
     localStorage.setItem("theme", theme);
 }
 
+//window.addEventListener('load', () => {
+    //addHeader()
+    //setDark()
+//})
+
 (function() {
     document.addEventListener('DOMContentLoaded', (event) => {
             setDark();
@@ -37,7 +50,10 @@ function setDark() {
 
     if (currentTheme == 'dark') {
         document.getElementById("prism").href = "/assets/prism-dark.css"
-        document.body.classList.add('dark');
+        //document.body.classList.add('dark');
+        let checkbox = document.querySelector("input#darkmode-toggle");
+        checkbox.checked = true;
+        toggleTheme(true);
     }
 }
 
@@ -139,6 +155,7 @@ window.onload = function() {
 }
 
 function addHeader() {
+    setDark();
     document.body.innerHTML += `
         <header id="navbar">
         <div class="sidebar-button">
